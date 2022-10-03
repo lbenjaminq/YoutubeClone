@@ -53,10 +53,12 @@ const Menu = ({ darkMode, setDarkMode }) => {
         <Hr/>
         <Login>
           Sign in to like videos, comment, and subscribe.
-          <Button>
-            <AccountCircleIcon/>
-            SIGN IN
-          </Button>
+          <Link to="signin" style={{textDecoration:"none"}}>
+            <Button>
+              <AccountCircleIcon/>
+              SIGN IN
+            </Button>
+          </Link>
         </Login>
         <Hr/>
         <Title>
@@ -141,13 +143,19 @@ const Item = styled.div`
   gap:20px;
   cursor:pointer;
   padding: 7.5px 0px;
+  &:hover{
+    background-color: ${({theme}) => theme.soft};
+  }
 `
 
 const Hr = styled.hr`
   margin:15px 0px;
   border:0.5px solid ${({theme})=> theme.soft};
 `
-const Login  = styled.div``
+
+const Login  = styled.div`
+`
+
 const Button = styled.button`
   padding:5px 15px;
   background-color:transparent;

@@ -6,6 +6,7 @@ import { darkTheme, lightTheme } from "./Utils/Theme";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Video from "./Pages/Video";
+import Signin from "./Pages/Signin";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -21,6 +22,7 @@ function App() {
               <Routes>
                 <Route path="/">
                   <Route index element={<Home />} />
+                  <Route path="signin" element={<Signin />} />
                   <Route path="video">
                     <Route path=":id" element={<Video />} />
                   </Route>

@@ -5,6 +5,8 @@ import ThumbDownOffAltIcon from "@mui/icons-material/ThumbDownOffAlt";
 import ReplyIcon from "@mui/icons-material/Reply";
 import LibraryAddOutlinedIcon from "@mui/icons-material/LibraryAddOutlined";
 import Comments from "../Components/Comments";
+import Card from "../Components/Card"
+
 
 const Video = () => {
   return (
@@ -58,7 +60,18 @@ const Video = () => {
         <Hr/>
         <Comments/>
       </Content>
-      <Recommendation>Recomendation</Recommendation>
+      <Recommendation>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+        <Card type="sm"/>
+      </Recommendation>
     </Container>
   );
 };
