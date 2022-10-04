@@ -1,22 +1,15 @@
-import React from 'react'
 import Card from '../Components/Card'
 import styled from 'styled-components'
 
-const Home = () => {
+const Home = ({videos}) => {
+
   return (
     <Container>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
-      <Card/>
+      {
+        videos?.map((movie)=>(
+          <Card movie={movie}/>
+        ))
+      }
     </Container>
   )
 }

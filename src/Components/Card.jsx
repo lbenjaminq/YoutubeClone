@@ -2,17 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const Card = ({type}) => {
+const Card = ({type,movie}) => {
+
+  const base_url= "https://image.tmdb.org/t/p/original";
+
   return (
     <Link to={"/video/test"} style={{textDecoration:"none"}}>
       <Container type={type}>
-        <Image type={type} />
+        <Image type={type} src={`https://image.tmdb.org/t/p/w300${movie.backdrop_path}` ||`https://image.tmdb.org/t/p/w300${movie.poster_path}` } />
         <Details type={type} >
           <ChannelImage type={type} />
           <Texts>
-            <Title>Name</Title>
+            <Title>{movie.title || movie.name}</Title>
             <ChannelName>Channel</ChannelName>
-            <Info>660views, sharing, 1day ago</Info>
+            <Info>{movie.popularity} ¨ {movie.first_air_date || movie.release_date}</Info>
           </Texts>
         </Details>
       </Container>

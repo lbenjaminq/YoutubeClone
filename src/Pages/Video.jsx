@@ -8,7 +8,7 @@ import Comments from "../Components/Comments";
 import Card from "../Components/Card"
 
 
-const Video = () => {
+const Video = ({videos}) => {
   return (
     <Container>
       <Content>
@@ -16,7 +16,7 @@ const Video = () => {
           <iframe
             width={"100%"}
             height={"720"}
-            src="https://www.youtube.com/embed/k3Vfj-e1Ma4"
+            src="https://www.youtube.com/embed/aFVxyceSgvw"
             title="Messi playing"
             frameBorder={"0"}
             allow="accelerometer,autoplay; clipboard-write; enctrypted-media; gyroscope; picture-in-picture"
@@ -61,16 +61,11 @@ const Video = () => {
         <Comments/>
       </Content>
       <Recommendation>
-        <Card type="sm"/>
-        <Card type="sm"/>
-        <Card type="sm"/>
-        <Card type="sm"/>
-        <Card type="sm"/>
-        <Card type="sm"/>
-        <Card type="sm"/>
-        <Card type="sm"/>
-        <Card type="sm"/>
-        <Card type="sm"/>
+        {
+        videos?.map((movie)=>(
+          <Card movie={movie} type="sm"/>
+        ))
+      }
       </Recommendation>
     </Container>
   );
